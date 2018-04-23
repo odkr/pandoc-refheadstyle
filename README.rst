@@ -1,53 +1,56 @@
-=======================
-pandoc-reference-header
-=======================
+===================
+pandoc-refheadstyle
+===================
 
-``pandoc-reference-header`` is a filter for `pandoc <http://pandoc.org/>`_
-that changes the style of the reference section header, provided one was
-inserted by ``pandoc-citeproc``. By default, it uses the style "Bibliography
-Heading", but you can define a custome styleby setting the metadata field
-``reference-header-style``.
+``pandoc-refheadstyle`` sets a custom style for the reference section header,
+but only if the metadata field ``reference-section-title`` has been set to a
+non-empty value.
 
-See the `manual page <man/pandoc-reference-header.rst>`_ for more details.
+By default, the reference section header will be assigned the custom style
+'Bibliography Heading'. But you can change what style is assigned by setting
+the metadata field ``reference-header-style`` to the name of a style of
+your choice. If the style does not exist, it will be created.
+
+See the `manual page <man/pandoc-refheadstyle.rst>`_ for more details.
 
 
-Installing ``pandoc-reference-header``
+Installing ``pandoc-refheadstyle``
 ======================================
 
-You use ``pandoc-reference-header`` **at your own risk**. You have been warned.
+You use ``pandoc-refheadstyle`` **at your own risk**. You have been warned.
 
 You need `Python 2.7 <https://www.python.org/>`_ or newer and
 `panflute <https://github.com/sergiocorreia/panflute>`_.
 
 Simply run::
 
-    pip install pandoc_reference_header
+    pip install pandoc_refheadstyle
 
-This will try to install ``pandoc-reference-header`` manual page, but this
+This will try to install ``pandoc-refheadstyle`` manual page, but this
 will only work on a limited number of systems.
 
 Alternatively, you can also download the source for the `current version
-<https://codeload.github.com/odkr/pandoc-reference-header/tar.gz/v0.1.0>`_.
+<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.0>`_.
 
-Simlpy run::
+Simply run::
 
-    curl https://codeload.github.com/odkr/pandoc-reference-header/tar.gz/v0.1.0 | tar -xz
-    cd pandoc-reference-header-0.6.0
+    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.0 | tar -xz
+    cd pandoc-refheadstyle-0.6.0
     python setup.py install
 
 
 Documentation
 =============
 
-See the `manual page <man/pandoc-reference-header.rst>`_
+See the `manual page <man/pandoc-refheadstyle.rst>`_
 and the source for details.
 
 
 Contact
 =======
 
-If there's something wrong with ``pandoc-reference-header``, `open an issue
-<https://github.com/odkr/pandoc-reference-header/issues>`_.
+If there's something wrong with ``pandoc-refheadstyle``, `open an issue
+<https://github.com/odkr/pandoc-refheadstyle/issues>`_.
 
 
 License
@@ -78,7 +81,7 @@ Further Information
 ===================
 
 GitHub:
-<https://github.com/odkr/pandoc-reference-header>
+<https://github.com/odkr/pandoc-refheadstyle>
 
 PyPI:
-<https://pypi.org/project/pandoc-reference-header>
+<https://pypi.org/project/pandoc-refheadstyle>
