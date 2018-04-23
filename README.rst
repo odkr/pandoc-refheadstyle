@@ -15,7 +15,7 @@ See the `manual page <man/pandoc-refheadstyle.rst>`_ for more details.
 
 
 Installing ``pandoc-refheadstyle``
-======================================
+==================================
 
 You use ``pandoc-refheadstyle`` **at your own risk**. You have been warned.
 
