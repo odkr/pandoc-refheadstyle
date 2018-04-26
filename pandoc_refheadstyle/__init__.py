@@ -57,14 +57,14 @@ class RefHeadStyleSetter(): # pylint: disable=R0903, R1710, W0201
         reference section header.
         """
         try:
-            if not self.title:
-                return
+            if self.title:
+                return set_style(elem, doc, self.title, self.style)
         except AttributeError:
             self.title = doc.get_metadata('reference-section-title')
             style = doc.get_metadata('reference-header-style')
             if style:
                 self.style = style
-        return set_style(elem, doc, self.title, self.style)
+        return self(elem, doc)
 
 
 def set_style(elem, doc, title, style): # pylint: disable=R1710
