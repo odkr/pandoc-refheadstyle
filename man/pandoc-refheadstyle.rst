@@ -8,7 +8,7 @@ Sets a custom style for the reference section header
 
 :Author: Odin Kroeger
 :Date: April 22, 2018
-:Version: 0.1.0
+:Version: 0.1.1
 :Manual section: 1
 
 
