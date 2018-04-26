@@ -30,11 +30,11 @@ This will try to install ``pandoc-refheadstyle`` manual page, but this
 will only work on a limited number of systems.
 
 Alternatively, you can also download the source for the `current version
-<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.0>`_.
+<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.1>`_.
 
 Simply run::
 
-    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.0 | tar -xz
+    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.1 | tar -xz
     cd pandoc-refheadstyle-0.6.0
     python setup.py install
 

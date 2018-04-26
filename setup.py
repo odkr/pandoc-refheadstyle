@@ -3,7 +3,7 @@ from os import path
 from setuptools import setup
 
 setup(name='pandoc-refheadstyle',
-      version='0.1.1b1',
+      version='0.1.1',
       description=('Pandoc filter that sets a a custom style '
                    'for the reference section header.'),
       long_description=('Pandoc filter that sets a custom style '
