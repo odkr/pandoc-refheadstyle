@@ -8,7 +8,7 @@ Sets a custom style for the reference section header
 
 :Author: Odin Kroeger
 :Date: April 22, 2018
-:Version: 0.1.1
+:Version: 0.1.2
 :Manual section: 1
 
 
@@ -16,23 +16,27 @@ SYNOPSIS
 ========
 
 pandoc-refheadstyle [-h]
+pandoc [...] -F pandoc-refheadstyle [...]
 
 
 DESCRIPTION
 ===========
 
-``pandoc-refheadstyle`` sets a custom style for the reference section header,
-but only if the metadata field ``reference-section-title`` has been set to a
-non-empty value.
+``pandoc-refheadstyle`` sets a custom style for the reference section
+header, but only if the metadata field ``reference-section-title`` has been
+set to a non-empty value.
 
 By default, the reference section header will be assigned the custom style
-'Bibliography Heading'. But you can change what style is assigned by setting
-the metadata field ``reference-header-style`` to the name of a style of
-your choice. If the style does not exist, it will be created.
+'Bibliography Heading'. But you can define which style should be assigned
+by setting the metadata field ``reference-header-style`` to the name of
+a style of your choice. If the style does not exist, it will be created.
 
-``pandoc-refheadstyle`` considers any header the reference section header that
-is a top-level header, close to the end of the document and has a header text
-that is equal to the value of the metadata field ``reference-section-title``.
+``pandoc-refheadstyle`` considers any header the reference section header
+that (1) is one of the last three elements of the document, (2) is a top-level
+header, and (3) has a header text that is equal to the value of the metadata
+field ``reference-section-title`` (*all* criteria have to be met). If your
+reference section header was inserted by ``pandoc-citeproc``, all of these
+criteria will be met.
 
 
 LICENSE
