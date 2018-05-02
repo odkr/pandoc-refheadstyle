@@ -13,13 +13,18 @@ your choice. If the style does not exist, it will be created.
 
 See the `manual page <man/pandoc-refheadstyle.rst>`_ for more details.
 
+If you are using `Pandoc <https://www.pandoc.org/>`_ 2.0 or newer,
+you may want to use `pandoc-refheadstyle.lua
+<https://github.com/odkr/pandoc-refheadstyle.lua>`_ instead; it's
+easier to install and faster.
+
 
 Installing ``pandoc-refheadstyle``
 ==================================
 
 You use ``pandoc-refheadstyle`` **at your own risk**. You have been warned.
 
-You need `Python 2.7 <https://www.python.org/>`_ or newer and
+You need `Python <https://www.python.org/>`_ 2.7 or newer and
 `panflute <https://github.com/sergiocorreia/panflute>`_.
 
 Simply run::
@@ -30,11 +35,11 @@ This will try to install ``pandoc-refheadstyle`` manual page, but this
 will only work on a limited number of systems.
 
 Alternatively, you can also download the source for the `current version
-<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.1>`_.
+<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.2>`_.
 
 Simply run::
 
-    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.1 | tar -xz
+    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.2 | tar -xz
     cd pandoc-refheadstyle-0.6.0
     python setup.py install
 
@@ -85,3 +90,10 @@ GitHub:
 
 PyPI:
 <https://pypi.org/project/pandoc-refheadstyle>
+
+
+See also
+========
+
+`pandoc-refheadstyle.lua
+<https://github.com/odkr/pandoc-refheadstyle.lua>`_
