@@ -2,19 +2,19 @@
 pandoc-refheadstyle
 ===================
 
-``pandoc-refheadstyle`` sets a custom style for the reference section header,
-but only if the metadata field ``reference-section-title`` has been set to a
-non-empty value.
+``pandoc-refheadstyle`` sets a custom style for the reference section
+header, that is, if the metadata field ``reference-section-title`` has been
+set to a non-empty value.
 
 By default, the reference section header will be assigned the custom style
-'Bibliography Heading'. But you can change what style is assigned by setting
-the metadata field ``reference-header-style`` to the name of a style of
-your choice. If the style does not exist, it will be created.
+'Bibliography Heading'. But you can assign another style by setting the
+metadata field ``reference-header-style`` to the name of a style of your
+choice. If the style does not exist, it will be created.
 
 See the `manual page <man/pandoc-refheadstyle.rst>`_ for more details.
 
 If you are using `Pandoc <https://www.pandoc.org/>`_ 2.0 or newer,
-you may want to use `pandoc-refheadstyle.lua
+you will want to use `pandoc-refheadstyle.lua
 <https://github.com/odkr/pandoc-refheadstyle.lua>`_ instead; it's
 easier to install and faster.
 
@@ -35,12 +35,12 @@ This will try to install ``pandoc-refheadstyle`` manual page, but this
 will only work on a limited number of systems.
 
 Alternatively, you can also download the source for the `current version
-<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.2>`_.
+<https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.3>`_.
 
 Simply run::
 
-    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.2 | tar -xz
-    cd pandoc-refheadstyle-0.6.0
+    curl https://codeload.github.com/odkr/pandoc-refheadstyle/tar.gz/v0.1.3 | tar -xz
+    cd pandoc-refheadstyle-0.1.3
     python setup.py install
 
 

@@ -8,7 +8,7 @@ Sets style of reference section header
 
 :Author: Odin Kroeger
 :Date: April 22, 2018
-:Version: 0.1.2
+:Version: 0.1.3
 :Manual section: 1
 
 
