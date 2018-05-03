@@ -1,8 +1,8 @@
 .\" Man page generated from reStructuredText.
 .
-.TH PANDOC-REFHEADSTYLE 1 "April 22, 2018" "0.1.1" ""
+.TH PANDOC-REFHEADSTYLE 1 "April 22, 2018" "0.1.2" ""
 .SH NAME
-pandoc-refheadstyle \- Sets a custom style for the reference section header
+pandoc-refheadstyle \- Sets style of reference section header
 .
 .nr rst2man-indent-level 0
 .
@@ -33,20 +33,36 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .SH SYNOPSIS
 .sp
 pandoc\-refheadstyle [\-h]
+pandoc [...] \-F pandoc\-refheadstyle [...]
 .SH DESCRIPTION
 .sp
-\fBpandoc\-refheadstyle\fP sets a custom style for the reference section header,
-but only if the metadata field \fBreference\-section\-title\fP has been set to a
-non\-empty value.
+\fBpandoc\-refheadstyle\fP sets a custom style for the reference section
+header, that is, if the metadata field \fBreference\-section\-title\fP has been
+set to a non\-empty value.
 .sp
 By default, the reference section header will be assigned the custom style
-\(aqBibliography Heading\(aq. But you can change what style is assigned by setting
-the metadata field \fBreference\-header\-style\fP to the name of a style of
-your choice. If the style does not exist, it will be created.
+\(aqBibliography Heading\(aq. But you can assign another style by setting the
+metadata field \fBreference\-header\-style\fP to the name of a style of your
+choice. If the style does not exist, it will be created.
 .sp
-\fBpandoc\-refheadstyle\fP considers any header the reference section header that
-is a top\-level header, close to the end of the document and has a header text
-that is equal to the value of the metadata field \fBreference\-section\-title\fP\&.
+\fBpandoc\-refheadstyle\fP identifies the reference section header as the
+first element, starting from the end of the document, that meets all of
+the following three criteria:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP 1. 3
+It\(aqs one of the last five top\-level elements of the document.
+.IP 2. 3
+It\(aqs a level\-one header.
+.IP 3. 3
+It\(aqs header text is the one set in \fBreference\-section\-title\fP\&.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+A reference section header that was inserted by \fBpandoc\-citeproc\fP
+will meet all of those criteria.
 .SH LICENSE
 .sp
 Copyright 2018 Odin Kroeger

@@ -2,9 +2,9 @@
 pandoc-refheadstyle
 ===================
 
-----------------------------------------------------
-Sets a custom style for the reference section header
-----------------------------------------------------
+--------------------------------------
+Sets style of reference section header
+--------------------------------------
 
 :Author: Odin Kroeger
 :Date: April 22, 2018
@@ -23,20 +23,24 @@ DESCRIPTION
 ===========
 
 ``pandoc-refheadstyle`` sets a custom style for the reference section
-header, but only if the metadata field ``reference-section-title`` has been
+header, that is, if the metadata field ``reference-section-title`` has been
 set to a non-empty value.
 
 By default, the reference section header will be assigned the custom style
-'Bibliography Heading'. But you can define which style should be assigned
-by setting the metadata field ``reference-header-style`` to the name of
-a style of your choice. If the style does not exist, it will be created.
+'Bibliography Heading'. But you can assign another style by setting the
+metadata field ``reference-header-style`` to the name of a style of your
+choice. If the style does not exist, it will be created.
 
-``pandoc-refheadstyle`` considers any header the reference section header
-that (1) is one of the last three elements of the document, (2) is a top-level
-header, and (3) has a header text that is equal to the value of the metadata
-field ``reference-section-title`` (*all* criteria have to be met). If your
-reference section header was inserted by ``pandoc-citeproc``, all of these
-criteria will be met.
+``pandoc-refheadstyle`` identifies the reference section header as the
+first element, starting from the end of the document, that meets all of
+the following three criteria:
+
+    1. It's one of the last five top-level elements of the document.
+    2. It's a level-one header.
+    3. It's header text is the one set in ``reference-section-title``.
+
+A reference section header that was inserted by ``pandoc-citeproc``
+will meet all of those criteria.
 
 
 LICENSE
