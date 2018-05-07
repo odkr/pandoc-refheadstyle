@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # encoding=utf-8
 # pylint: disable=C0103
 """Pandoc filter that sets a custom style for the reference section header.

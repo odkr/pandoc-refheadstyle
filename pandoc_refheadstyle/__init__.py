@@ -23,7 +23,7 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
 """
-
+import sys
 from panflute import Div, Header, Para, stringify, run_filter
 
 DEFAULT_STYLE = 'Bibliography Heading'
@@ -58,7 +58,7 @@ class RefHeadStyleSetter(): # pylint: disable=R0903, R1710, W0201
         """
         try:
             if self.title:
-                return set_style(elem, doc, self.title, self.style)
+                return set_style(elem, self.title, self.style)
         except AttributeError:
             self.title = doc.get_metadata('reference-section-title')
             style = doc.get_metadata('reference-header-style')
@@ -67,7 +67,7 @@ class RefHeadStyleSetter(): # pylint: disable=R0903, R1710, W0201
         return self(elem, doc)
 
 
-def set_style(elem, doc, title, style): # pylint: disable=R1710
+def set_style(elem, title, style): # pylint: disable=R1710
     """Changes the style of the reference heading.
 
     Arguments:
@@ -89,13 +89,13 @@ def set_style(elem, doc, title, style): # pylint: disable=R1710
 
     ``elem`` is considered the reference section header if and only if:
         1. It is an instance of Header.
-        2. Its parent is ``doc``.
-        3. It is one of the last two children of ``doc``
-        4. Its text is the value of ``title``.
+        2. Its ID is 'bibliography'.
+        3. Its text is the value of ``title``.
     """
     if (isinstance(elem, Header) and
-            elem.level == 1 and
-            elem.parent == doc and
-            elem.index > len(doc.content) - 3 and
+            elem.identifier == 'bibliography' and
             stringify(elem) == title):
-        return Div(Para(*elem.content), attributes={'custom-style': style})
+        attributes = elem.attributes
+        attributes['custom-style'] = style
+        return Div(Para(*elem.content), identifier=elem.identifier,
+                   classes=elem.classes, attributes=attributes)
