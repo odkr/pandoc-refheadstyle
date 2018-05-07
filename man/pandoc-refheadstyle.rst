@@ -7,8 +7,8 @@ Sets style of reference section header
 --------------------------------------
 
 :Author: Odin Kroeger
-:Date: April 22, 2018
-:Version: 0.1.3
+:Date: May 7, 2018
+:Version: 0.2b1
 :Manual section: 1
 
 
@@ -17,6 +17,15 @@ SYNOPSIS
 
 pandoc-refheadstyle [-h]
 pandoc [...] -F pandoc-refheadstyle [...]
+
+
+DESCRIPTION
+===========
+
+SYNOPSIS
+========
+
+pandoc [...] --lua-filter pandoc-refheadstyle.lua-0.2/pandoc-refheadstyle.lua [...]
 
 
 DESCRIPTION
@@ -31,16 +40,9 @@ By default, the reference section header will be assigned the custom style
 metadata field ``reference-header-style`` to the name of a style of your
 choice. If the style does not exist, it will be created.
 
-``pandoc-refheadstyle`` identifies the reference section header as the
-first element, starting from the end of the document, that meets all of
-the following three criteria:
-
-    1. It's one of the last five top-level elements of the document.
-    2. It's a level-one header.
-    3. It's header text is the one set in ``reference-section-title``.
-
-A reference section header that was inserted by ``pandoc-citeproc``
-will meet all of those criteria.
+By fiat, a reference section header is any header that has the ID
+'bibliography' and the header text set in ``reference-section-title``.
+(A header inserted by ``pandoc-citeproc`` will meet these criteria.)
 
 
 LICENSE
