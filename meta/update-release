@@ -277,7 +277,7 @@ for FMT in tar.gz zip; do
     rm -rf "${RDIR:?}"
 done
 
-if "$PYTHON" -c 'import virtualenv'; then
+if "$PYTHON" -c 'import virtualenv' 2>/dev/null; then
     warn 'testing installation of GitHub release.'
     [ -d env ] || "$PYTHON" -m virtualenv env
     . env/bin/activate
