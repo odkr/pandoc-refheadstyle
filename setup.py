@@ -43,8 +43,7 @@ def readme(readme_fname="README.rst"):
 NAME = 'pandoc-refheadstyle'
 
 # Version of this package.
-VERSION = '0.2.1b0'
-
+VERSION = '0.2.1-b0'
 
 # All other metadata.
 # pylint: disable=C0330
@@ -73,6 +72,9 @@ METADATA = {
     'python_requires':  '>=2.7, <4',
     'packages':         ['pandoc_refheadstyle'],
     'install_requires': ['panflute'],
+    # I have yet to test whether the manual page installs
+    # if this is set to True.
+    'zip_safe':         False
 }
 
 
