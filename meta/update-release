@@ -220,6 +220,8 @@ EX=:
 for FILE in $UPDATE_FILES; do
     warn "updating %s." "$FILE"
     replace "$FILE" "$MOST_RECENT_RELEASE" "$NEW_RELEASE"
+    git add "$FILE"
+    git commit -m 'Updated version number.'
     EX="${EX?}; [ -e \"$FILE.orig\" ] && mv \"$FILE.orig\" \"$FILE\""
 done
 unset FILE
@@ -235,12 +237,12 @@ if [ -e docs ]; then
     cd -P docs || exit
     make clean html >/dev/null
     cd -P "$REPO" || exit
+    git add docs
+    git commit -m 'Updated version number.'
 fi
 
 warn 'releasing to GitHub'
 TAG="v$NEW_RELEASE"
-git add setup.py README.rst docs
-git commit -m 'Updated release.'
 git tag "$TAG"
 git push --quiet "$REMOTE_REPO" "$TAG"
 git push --quiet "$REMOTE_REPO"
