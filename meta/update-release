@@ -266,7 +266,6 @@ for FMT in tar.gz zip; do
         zip) unzip "$FILE" ;;
     esac
     RDIR="$GITHUB_REPO-$NEW_RELEASE"
-    readonly RDIR
     export RDIR
     find "$RDIR" -type f -print0 |
     xargs -0 sh -c 'for F; do cmp "$F" "../${F#$RDIR/}" || exit; done' --
