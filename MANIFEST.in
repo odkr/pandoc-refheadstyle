@@ -1,4 +1,2 @@
 include README.rst
 include LICENSE.txt
-include man/pandoc-quotes.rst
-include man/pandoc-quotes.1
