@@ -42,7 +42,7 @@ def readme(readme_fname="README.rst"):
 NAME = 'pandoc-refheadstyle'
 
 # Version of this package.
-VERSION = '0.2.1-rc0'
+VERSION = '0.2.1-rc2'
 
 # All other metadata.
 # pylint: disable=C0330
