@@ -106,6 +106,7 @@ replace() (
     cp "$fname" "$fname.orig" || return
     register_onexit
     EX="[ -e \"$tmp\" ] && rm -f \"$tmp\";"
+    set -x
     sed "s/${old?}/${new?}/" "$fname" >"$tmp" || return
     [ -f "$tmp" ] && mv "$tmp" "$fname"
     unset EX
@@ -166,7 +167,8 @@ readonly NEW_RELEASE
 # Determine other variables
 # =========================
 
-PREVIOUS_RELEASES=$(git tag --sort v:refname | sed -n 's/^v//p')
+PREVIOUS_RELEASES=$(git tag -c 'versionsort.suffix=-' -l --sort=v:refname |
+    sed -n 's/^v//p')
 : "${PREVIOUS_RELEASES:?'Could not guess previous releases.'}"
 readonly PREVIOUS_RELEASES
 
