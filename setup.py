@@ -15,7 +15,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Setup for the *pandoc-refheadstyle* package."""
 
-from shutil import copy
 from os import path
 from setuptools import setup
 
@@ -69,12 +68,10 @@ METADATA = {
     'author':           'Odin Kroeger',
     'author_email':     'tqxwcv@maskr.me',
     'license':          'MIT',
-    'python_requires':  '>=2.7, <4',
+    'python_requires':  '>=2.7',
     'packages':         ['pandoc_refheadstyle'],
     'install_requires': ['panflute'],
-    # I have yet to test whether the manual page installs
-    # if this is set to True.
-    'zip_safe':         False
+    'zip_safe':         True
 }
 
 
@@ -83,14 +80,3 @@ METADATA = {
 
 if __name__ == '__main__':
     setup(**METADATA)
-
-    # This is a bit rude, but it should work on many systems.
-    MANPAGE = path.join(path.dirname(__file__), 'man/pandoc-refheadstyle.1')
-    for i in ('/usr/local/share/man/man1', '/usr/share/man/man1'):
-        if path.exists(i):
-            try:
-                copy(MANPAGE, i)
-                break
-            # pylint: disable=W0703
-            except Exception:
-                pass
