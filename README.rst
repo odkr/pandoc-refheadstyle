@@ -11,12 +11,22 @@ By default, the reference section header will be assigned the custom style
 metadata field ``reference-header-style`` to the name of a style of your
 choice. If the style does not exist, it will be created.
 
-See the `manual page <man/pandoc-refheadstyle.rst>`_ for more details.
+By fiat, a reference section header is any header that has the ID
+'bibliography' and the header text set in ``reference-section-title``.
+(A header inserted by ``pandoc-citeproc`` will meet these criteria.)
 
 If you are using `Pandoc <https://www.pandoc.org/>`_ 2.0 or newer,
 you will want to use `pandoc-refheadstyle.lua
 <https://github.com/odkr/pandoc-refheadstyle.lua>`_ instead; it's
 easier to install and faster.
+
+
+Synopsis
+========
+
+    pandoc-refheadstyle [-h]
+
+    pandoc [...] -F pandoc-refheadstyle [...]
 
 
 Installing ``pandoc-refheadstyle``
@@ -30,13 +40,6 @@ You need `Python <https://www.python.org/>`_ 2.7 or newer and
 Simply run::
 
     pip install pandoc_refheadstyle
-
-
-Documentation
-=============
-
-See the `manual page <man/pandoc-refheadstyle.rst>`_
-and the source for details.
 
 
 Contact
