@@ -27,7 +27,7 @@ set -Cefu
 
 # The files in which to replace the old release string with the new one.
 # Takes a list of pathnames seperated by the input field seperator ($IFS).
-UPDATE_FILES='setup.py README.rst'
+UPDATE_FILES='setup.py'
 
 # Whether to run tests again after updating the release name.
 # You should do this if, and only if, some of the files listed in
