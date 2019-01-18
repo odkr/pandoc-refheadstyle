@@ -167,7 +167,7 @@ readonly NEW_RELEASE
 # Determine other variables
 # =========================
 
-PREVIOUS_RELEASES=$(git tag -c 'versionsort.suffix=-' -l --sort=v:refname |
+PREVIOUS_RELEASES=$(git -c 'versionsort.suffix=-' tag -l --sort=v:refname |
     sed -n 's/^v//p')
 : "${PREVIOUS_RELEASES:?'Could not guess previous releases.'}"
 readonly PREVIOUS_RELEASES
