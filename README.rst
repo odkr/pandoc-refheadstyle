@@ -24,9 +24,9 @@ easier to install and faster.
 Synopsis
 ========
 
-    pandoc-refheadstyle [-h]
+pandoc-refheadstyle [-h]
 
-    pandoc [...] -F pandoc-refheadstyle [...]
+pandoc [...] -F pandoc-refheadstyle [...]
 
 
 Installing ``pandoc-refheadstyle``
